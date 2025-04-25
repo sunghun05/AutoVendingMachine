@@ -1,11 +1,14 @@
 package dataStructs;
 
 public class Queue{
-    public void inqueue(int val){
+    private Node back = new Node();
+    private Node front = new Node();
+
+    public void put(int val){
 
     }
-    public int dequeue(){
-
+    public int get(){
 
     }
+
 }
