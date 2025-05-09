@@ -1,4 +1,10 @@
 package moneyBox;
 
-public class Money {
+import linkedList.Node;
+
+public class Money extends Node {
+
+    Money(int count) {
+
+    }
 }

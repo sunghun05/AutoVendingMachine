@@ -1,4 +1,5 @@
 package moneyBox;
 
-public class PaymentMachine {
+abstract class PaymentMachine {
+    abstract int MoneyInput(int pay);
 }
