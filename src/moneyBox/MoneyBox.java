@@ -4,25 +4,36 @@ import linkedList.LinkedList;
 import moneyBox.Money;
 
 public class MoneyBox implements LinkedList {
+    private int[] moneyUnits = {10, 50, 100, 500, 1000};
     private Money head;
 
-    @Override
-    void init(){
-
-    }
-    @Override
-    Money search(int index){
-
-    }
+    private int MAX_MONEY_COUNT = 15;
 
     @Override
-    void reFill(String name, int count){
-
+    public void init(int count){
+        this.head = new Money();
+        for(int i= 0; i<moneyUnits.length; i++){
+            Money moneyUnit = new Money(i, moneyUnits[i], 10, 0);
+            if (head.next == null) {
+                head.next = moneyUnit;
+            } else {
+                Money tmp = this.head;
+                while (tmp.next != null) {
+                    tmp = tmp.next;
+                }
+                tmp.next = moneyUnit;
+            }
+        }
     }
     @Override
-    void takeOut(String name, int count){
-
+    public Money search(int index){
+        Money tmp = this.head;
+        for (int i = 0; i<index; i++){
+            tmp = tmp.next;
+        }
+        return tmp;
     }
+
 
     //
     int[] calculateChanges(int money){

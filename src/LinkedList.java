@@ -1,14 +1,8 @@
 package dataStructs;
 
 class Node {
-
     int val;
     String strData;
-    Node next;
-
-    public Node(){
-        this.next = null;
-    }
 }
 public class LinkedList {
     private Node head = new Node();
