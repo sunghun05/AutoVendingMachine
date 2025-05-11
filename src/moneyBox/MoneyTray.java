@@ -5,6 +5,11 @@ import linkedList.LinkedList;
 
 class Money extends Node {
     Money next;
+    Money(int index, int value){
+        // value == index
+        super(index, value);
+        this.next = null;
+    }
     Money(int value){
         super(value);
         this.next = null;
@@ -12,22 +17,23 @@ class Money extends Node {
 }
 
 public class MoneyTray implements LinkedList {
-    Money head;
-    Money tail;
+    Money top;
     int moneyUnit;
+    final int sizeOfMoneyTray = 10;
 
     MoneyTray(int moneyUnit){
-        this.head = new Money(moneyUnit);
+        //moneyUnit is price of the currency
+        this.top = new Money(-1, moneyUnit);
         this.moneyUnit = moneyUnit;
-        init(10);
+        init();
     }
     //head
     @Override
-    public void init(int count) {
-        for(int index = 0; index < count; index++){
-            Money money = new Money(index);
-            if (head.next == null) {
-                head.next = money;
+    public void init() {
+        for(int i = 0; i < this.sizeOfMoneyTray; i++){
+            Money money = new Money(i);
+            if (top.next == null) {
+                top.next = money;
             } else {
                 Money tmp = this.head;
                 while (tmp.next != null) {
