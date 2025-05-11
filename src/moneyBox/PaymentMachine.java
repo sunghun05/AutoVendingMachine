@@ -1,5 +1,11 @@
 package moneyBox;
 
-abstract class PaymentMachine {
-    abstract int MoneyInput(int pay);
+class PaymentMachine {
+    //for user
+    int MoneyInput(int pay){
+
+    }
+    int MoneyOutput() {
+
+    }
 }
