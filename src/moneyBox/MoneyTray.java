@@ -1,6 +1,7 @@
 package moneyBox;
 
-import linkedList.*;
+import linkedList.LinkedList;
+import linkedList.Node;
 
 /**
  * class name: Money
