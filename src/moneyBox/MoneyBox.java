@@ -1,25 +1,24 @@
 package moneyBox;
 
 import linkedList.LinkedList;
-import moneyBox.PaymentMachine;
+//import moneyBox.PaymentMachine;
 import moneyBox.MoneyTray;
 
 /**
  * class name: MoneyBox
- * latest modify date: 2025.05.11
+ * latest modify date: 2025.05.15
  * run environment: MacOS 15.4.1(24E263)
  *
  * Feature: manages each money trays with linked list method
  *
  * @author Sunghun Wang
- * @version 1.0, implemented class
+ * @version 1.1.0, implemented class
  * @see
  */
 
 public class MoneyBox extends PaymentMachine implements LinkedList {
-    MoneyTray head;
+    MoneyTray head = new MoneyTray(0);
     MoneyBox(){
-        head.next = null;
         init();
     }
     @Override
@@ -45,7 +44,14 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
     }
     @Override
     public void takeOut(int moneyUnit){
-
+        System.out.println("take out");
+    }
+    void search(){
+        MoneyTray tmp = head;
+        while(tmp.next != null){
+            tmp = tmp.next;
+            System.out.println(tmp.moneyUnit);
+        }
     }
     //use linked list
 //    int[] calculateChanges(int money){
@@ -55,4 +61,10 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
 //
 //    }
 
+}
+class DebugMoneyBox {
+    public static void main(String[] args){
+        MoneyBox newMoneyBox = new MoneyBox();
+        newMoneyBox.search();
+    }
 }

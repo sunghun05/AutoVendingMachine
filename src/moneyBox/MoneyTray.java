@@ -12,15 +12,11 @@ import linkedList.*;
  * @see linkedList.Node
  */
 
-class Money extends Node {
-    Money next;
+class Money extends Node<Money> {
     Money(int index, int value){
-        // value == index
         super(index, value);
-        this.next = null;
     }
 }
-
 
 /**
  * class name: MoneyTray
@@ -47,6 +43,7 @@ public class MoneyTray implements LinkedList {
     static int totalIncome = 0;
 
     MoneyTray(int moneyUnit){
+        this.next = null;
         //moneyUnit is price of the currency
         this.top = new Money(-1, moneyUnit);
         this.moneyUnit = moneyUnit;
