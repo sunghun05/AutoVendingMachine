@@ -6,7 +6,7 @@ import moneyBox.MoneyTray;
 
 /**
  * class name: Drinks
- * latest modify date: 2025.05.
+ * latest modify date: 2025.05.15
  * run environment: MacOS 15.4.1(24E263)
  *
  * Feature:
@@ -17,14 +17,16 @@ import moneyBox.MoneyTray;
  */
 
 class Drinks extends Node<Drinks> {
+    Drinks prev;
     Drinks(int index, int value){
         super(index, value);
+        this.prev = null;
     }
 }
 
 /**
  * class name: DrinksTray
- * latest modify date: 2025.05.
+ * latest modify date: 2025.05.16
  * run environment: MacOS 15.4.1(24E263)
  *
  * Feature:
@@ -36,6 +38,7 @@ class Drinks extends Node<Drinks> {
 public class DrinksTray implements LinkedList {
 
     Drinks head;
+    Drinks tail;
 
     int trayNumber;
 
@@ -47,14 +50,17 @@ public class DrinksTray implements LinkedList {
     public void init(){
         //head.index: length, head.value: trayNumber
         this.head = new Drinks(0, this.trayNumber);
+        this.tail = head;
         reFill(10);
     }
     @Override
     public void reFill(int count){
         Drinks newDrinks;
-        for(int i = this.head.index; i<count+this.head.index; i++) {
+        int endPoint = this.head.index + count;
+        for(int i = this.head.index; i<endPoint; i++) {
             newDrinks = new Drinks(i, this.trayNumber);
             if (head.next == null) {
+                newDrinks.prev = head;
                 head.next = newDrinks;
                 head.index++;
             } else {
@@ -65,11 +71,12 @@ public class DrinksTray implements LinkedList {
                 tmp.next = newDrinks;
                 head.index++;
             }
+            tail = tail.next;
         }
     }
     @Override
-    public void takeOut(int moneyUnit){
-        return ;
+    public void takeOut(int count){
+
     }
     void search(){
         Drinks tmp = head;
