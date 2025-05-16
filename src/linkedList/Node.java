@@ -1,15 +1,16 @@
 package linkedList;
 
-public class Node {
+public class Node<T> {
     public int index;
     public int value;
-    //for head or etc
+    public T next;
     public Node(int index, int value) {
         this.index = index;
         this.value = value;
+        this.next = null;
     }
-    //for node
     public Node(int value){
         this.value = value;
+        this.next = null;
     }
 }

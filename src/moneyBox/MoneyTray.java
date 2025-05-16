@@ -1,92 +1,111 @@
 package moneyBox;
 
-import linkedList.Node;
 import linkedList.LinkedList;
+import linkedList.Node;
 
-class Money extends Node {
-    Money next;
+/**
+ * class name: Money
+ * latest modify date: 2025.05.11
+ * run environment: mac os 15.4.1(24E263)
+ *
+ * @author Sunghun Wang
+ * @version 1.0, implemented class
+ * @see linkedList.Node
+ */
+
+class Money extends Node<Money> {
     Money(int index, int value){
-        // value == index
         super(index, value);
-        this.next = null;
-    }
-    Money(int value){
-        super(value);
-        this.next = null;
     }
 }
 
+/**
+ * class name: MoneyTray
+ * latest modify date: 2025.05.11
+ * run environment: MacOS 15.4.1(24E263)
+ *
+ * Feature: Money Tray with Stack algorithm by linked list data structure
+ *
+ * @author Sunghun Wang
+ * @version 1.0, implemented class
+ * @see linkedList.LinkedList
+ */
+
 public class MoneyTray implements LinkedList {
+    //stack
     Money top;
+    //money box linked list
+    MoneyTray next;
+    //10, 50, 100, 500, 1000
     int moneyUnit;
+    //maximum capacity of money tray
     final int sizeOfMoneyTray = 10;
+    //sum total income
+    static int totalIncome = 0;
 
     MoneyTray(int moneyUnit){
+        this.next = null;
         //moneyUnit is price of the currency
         this.top = new Money(-1, moneyUnit);
         this.moneyUnit = moneyUnit;
         init();
     }
     //head
+    //initialize money tray (stack)
     @Override
     public void init() {
-        for(int i = 0; i < this.sizeOfMoneyTray; i++){
-            Money money = new Money(i);
-            if (top.next == null) {
-                top.next = money;
-            } else {
-                Money tmp = this.head;
-                while (tmp.next != null) {
-                    tmp = tmp.next;
+        //add 10
+        this.reFill(10);
+    }
+    // == append
+    @Override
+    public void reFill(int count){
+        int start = this.top.index+1;
+        for (int i = start; i<start+count; i++){
+            if(isFull()){System.out.println("Stack Overflow(money tray is full)");break;}
+            else{
+                Money newMoney = new Money(i, this.moneyUnit);
+                if(isEmpty()){
+                    top.next = newMoney;
+                }else{
+                    newMoney.next = top.next;
+                    top.next = newMoney;
                 }
-                tmp.next = money;
+                System.out.println("top: "+this.top.next.index);
             }
         }
     }
     @Override
-    void reFill(int index, int count){
-        Money tmp = this.head;
-        while (tmp.next != null) {
-            tmp = tmp.next;
-        }
-    }
-    @Override
-    void takeOut(int index, int count);
-    public int search(int goal) {
-        int index = 0;
-        dataStructs.Node tmp = this.head.next;
-        while(tmp.next!=null){
-            if(tmp.val == goal){
-                System.out.printf("the data '%d'locates at the index %d", goal, index);
-                return index;
+    public void takeOut(int count){
+        for (int i = 0; i<count; i++){
+            if(isEmpty()) {System.out.println("Stack Underflow(no money left)");break;}
+            else{
+                System.out.println("top: "+ (--this.top.next.index));
+                top.next = top.next.next;
             }
-            tmp = tmp.next;
-            index++;
-        }
-        return -1;
-    }
-    public void insert(int index, int val){
-        dataStructs.Node tmp = this.head.next;
-        dataStructs.Node preTmp = this.head;
-        int cnt = 0;
-        while(tmp.next!=null){
-            if(cnt == index){
-                dataStructs.Node newNode = new dataStructs.Node();
-                newNode.val = val;
-                newNode.next = tmp;
-                preTmp.next = newNode;
-            }
-            cnt++;
-            preTmp = tmp;
-            tmp = tmp.next;
         }
     }
-    public void show() {
-        dataStructs.Node tmp = this.head;
-        while(tmp.next!=null){
-            tmp = tmp.next;
-            System.out.printf("%4d", tmp.val);
-        }
-        System.out.println();
+    boolean isFull() {
+        return (this.top.index == this.sizeOfMoneyTray-1);
+    }
+    boolean isEmpty() {
+        return (this.top.next == null);
+    }
+}
+/**
+ * class name: debugMoneyTray
+ * latest modify date: 2025.05.11
+ * run environment: mac os 15.4.1(24E263)
+ *
+ * @author Sunghun Wang
+ * @version 1.0, implemented class
+ *
+ */
+class debugMoneyTray{
+    public static void main(String[] args){
+        MoneyTray Tray_10 = new MoneyTray(10);
+        Tray_10.takeOut(9);
+//        Tray_10.takeOut(2);
+        System.out.println(Tray_10.top.next.index);
     }
 }
