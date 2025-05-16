@@ -5,3 +5,4 @@ public interface LinkedList {
     void reFill(int val);
     void takeOut(int val);
 }
+

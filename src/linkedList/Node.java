@@ -9,4 +9,8 @@ public class Node<T> {
         this.value = value;
         this.next = null;
     }
+    public Node(int value){
+        this.value = value;
+        this.next = null;
+    }
 }
