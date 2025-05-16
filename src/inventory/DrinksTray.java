@@ -40,6 +40,9 @@ public class DrinksTray implements LinkedList {
     Drinks head;
     Drinks tail;
 
+    DrinksTray left;
+    DrinksTray right;
+
     int trayNumber;
 
     DrinksTray(int trayNumber){
