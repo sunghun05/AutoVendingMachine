@@ -8,10 +8,10 @@ import linkedList.BinaryTree;
  * latest modify date: 2025.05.16
  * run environment: MacOS 15.4.1(24E263)
  *
- * Feature:
+ * Feature: Implemented class that resembles Drinks Tray storing drinks in reality
  *
  * @author Sunghun Wang
- * @version 1.0, implemented class
+ * @version 0.9, implemented class
  * @see
  */
 
