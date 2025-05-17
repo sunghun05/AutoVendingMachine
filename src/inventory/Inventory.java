@@ -15,11 +15,11 @@ import linkedList.BinaryTree;
  * @see
  */
 
-class InventoryTree implements BinaryTree<DrinksTray> {
+public class Inventory implements BinaryTree<DrinksTray> {
 
     DrinksTray head;
 
-    InventoryTree(){
+    public Inventory(){
         head = new DrinksTray(6);
         reFill(new DrinksTray(1));
         reFill(new DrinksTray(3));
@@ -71,6 +71,6 @@ class InventoryTree implements BinaryTree<DrinksTray> {
 
 class debugInventoryTree {
     public static void main(String[] args){
-        InventoryTree box = new InventoryTree();
+        Inventory box = new Inventory();
     }
 }

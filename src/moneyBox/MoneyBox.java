@@ -18,7 +18,7 @@ import moneyBox.MoneyTray;
 
 public class MoneyBox extends PaymentMachine implements LinkedList {
     MoneyTray head = new MoneyTray(0);
-    MoneyBox(){
+    public MoneyBox(){
         init();
     }
     @Override

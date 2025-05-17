@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
  * @version 0.8, implemented class
  * @see
  */
+import inventory.*;
+import moneyBox.*;
 
 public class AutoVendingMachine extends JFrame {
     private JPanel panel1;
@@ -96,5 +98,9 @@ public class AutoVendingMachine extends JFrame {
     }
     public static void main(String[] args){
         new AutoVendingMachine();
+
+        Inventory inventory = new Inventory();
+        MoneyBox box = new MoneyBox();
+
     }
 }
