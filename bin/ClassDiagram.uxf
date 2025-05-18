@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>456</y>
+      <w>176</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>//음료 저장
+//판매중(재고있음), 금액 저장
+//상품 선택
+//상품 리필
+//상품 반환
+Inventory
+--
+-head: DrinksTray
+--
++ReFill(int, int): void
+//parameter of ReFill is name of drink, the number of the drink
++TakeOut(int, int): void
+//parameter of TakeOut is name of drink, the number of the drink
++SelectDrinks(int[]): void
+//if drink A is selected, changes A's "isSelected" as true
++FindSelectedDrinks(): int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>784</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Drink
+--
++index: int
+--
++Drinks(count): void
+//generator</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>560</y>
+      <w>48</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=8</panel_attributes>
+    <additional_attributes>40.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>752</x>
+      <y>456</y>
+      <w>128</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Default the number of 
+type of drinks is 8
+max store count is 10
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>512</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>//Calculate Change
+//Store Money
+MoneyBox
+--
+-head: Money
+--
++calculateChanges(int): int[5]
++getMoneyLog(): int[5]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>472</x>
+      <y>544</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LinkedList
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>568</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>OutputQueue
+//Queue Data Structure which stores selected drinks
+--
+-front: MoneyBox
+-back: MoneyBox
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>16</x>
+      <y>744</y>
+      <w>152</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Money
+--
+//generator
++Money(count): void
++IsEmpty(): boolean
+//max Money count differs by money
++IsFull(): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>544</y>
+      <w>128</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=5</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>448</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>PaymentMachine
+--
++MoneyInput(int): int
++MoneyOutput(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>504</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>230.0;80.0;230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>456</y>
+      <w>152</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+LinkedList: Class
+--
++init()
++reFill()
++TakeOut()
++search(int): Node</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>560</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>560</y>
+      <w>72</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;70.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>632</y>
+      <w>136</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/Node/
+--
+-index: int
+-price: int
+-count: int
+-loss: int
+-next: Node
+--
++init(count): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>736</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=child</panel_attributes>
+    <additional_attributes>190.0;130.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>88</y>
+      <w>136</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>AdminInfo
+--
+-id: String
+-password: String
+-name: String
+-AVMid: String
+--
+ isAdmin(String, String): boolean
+ changeId():
+ changePss():
+ changeName():
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>736</y>
+      <w>368</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=child
+m2=parent</panel_attributes>
+    <additional_attributes>10.0;70.0;400.0;70.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>752</x>
+      <y>536</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Inventory, OutputQueue
+should be integreted
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>376</x>
+      <y>304</y>
+      <w>144</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>showMoneyBox
+--
++writeIncomeLog(): void
++readIncomeLog(): void
++sumTotalIncome(): int
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>304</y>
+      <w>152</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>showInventory
+--
++writeInventoryLog(): void
++readInventoryLog(): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>88</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MachineState
+--
++init()
++reFill()
++TakeOut()
++sumTotalIncome(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>176</y>
+      <w>104</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;10.0;110.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>176</y>
+      <w>24</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>176</y>
+      <w>48</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;160.0;40.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>176</y>
+      <w>184</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;160.0;210.0;40.0;40.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>200</x>
+      <y>64</y>
+      <w>576</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>admin
+--
+lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>384</x>
+      <y>416</y>
+      <w>168</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>linkedList
+--
+lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>568</x>
+      <y>416</y>
+      <w>384</w>
+      <h>472</h>
+    </coordinates>
+    <panel_attributes>inventory
+--
+lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>416</y>
+      <w>368</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>moneyBox
+--
+lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>256</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>changeMethods
+--
+//change search methods 
+//for every search algorithms
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>16</x>
+      <y>592</y>
+      <w>152</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>//Stack Algorithm with linkedlist
+MoneyTray
+--
+//generator
++Money(count): void
++IsEmpty(): boolean
+//max Money count differs by money
++IsFull(): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>648</y>
+      <w>32</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=10</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>608</y>
+      <w>176</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>//Queue Algorithm with linkedlist
+DrinksTray
+--
+-head: Drink
+--
++ReFill(int): void
+//parameter of ReFill is name of drink, the number of the drink
++TakeOut(int): void
+isEmpty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>712</y>
+      <w>48</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=..10</panel_attributes>
+    <additional_attributes>10.0;90.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>560</y>
+      <w>256</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>300.0;10.0;300.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>560</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;160.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>744</x>
+      <y>584</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Deq
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>96</x>
+      <y>568</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Stack
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>872</y>
+      <w>256</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Class Comment
+/**
+ * class name: 
+ * latest modify date: 
+ * run environment: MacOS 15.4.1(24E263)
+ *
+ * Feature: 
+ *
+ * @author Sunghun Wang
+ * @version 1.0, implemented class
+ * @see 
+ */</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>472</y>
+      <w>120</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=child
+m2=parent</panel_attributes>
+    <additional_attributes>100.0;50.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>344</y>
+      <w>88</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=child
+m2=parent</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>344</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=child
+m2=parent</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>576</x>
+      <y>432</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LinkedList
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -5,7 +5,7 @@ import linkedList.BinaryTree;
 
 /**
  * class name: InventoryTree
- * latest modify date: 2025.05.16
+ * latest modify date: 2025.05.18
  * run environment: MacOS 15.4.1(24E263)
  *
  * Feature: Implemented class that resembles Drinks Tray storing drinks in reality
@@ -33,22 +33,20 @@ public class Inventory implements BinaryTree<DrinksTray> {
             if (element.trayNumber < tmp.trayNumber) {
                 if(tmp.left == null){
                     tmp.left = element;
-                    System.out.println("left");
+//                    System.out.println("left");
                     break;
                 }else{
                     tmp = tmp.left;
-                    System.out.println("left");
-                    break;
+//                    System.out.println("left");
                 }
             } else if (element.trayNumber > tmp.trayNumber) {
                 if(tmp.right == null){
                     tmp.right = element;
-                    System.out.println("right");
+//                    System.out.println("right");
                     break;
                 }else{
                     tmp = tmp.right;
-                    System.out.println("right");
-                    break;
+//                    System.out.println("right");
                 }
             }
         }
@@ -61,7 +59,18 @@ public class Inventory implements BinaryTree<DrinksTray> {
 
     }
     public DrinksTray search(int id){
-        DrinksTray tmp = new DrinksTray(1);
+        DrinksTray tmp = this.head;
+
+        while(tmp.trayNumber != id){
+            if(id < tmp.trayNumber && tmp.left != null){
+                tmp = tmp.left;
+            }else if(id > tmp.trayNumber && tmp.right != null) {
+                tmp = tmp.right;
+            }else{
+                break;
+            }
+        }
+        System.out.println(tmp.trayNumber);
         return tmp;
     }
     public void del(int id){
@@ -72,5 +81,8 @@ public class Inventory implements BinaryTree<DrinksTray> {
 class debugInventoryTree {
     public static void main(String[] args){
         Inventory box = new Inventory();
+        DrinksTray tmp = box.search(7);
+        System.out.println(tmp.trayNumber);
+
     }
 }
