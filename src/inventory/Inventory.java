@@ -20,12 +20,15 @@ public class Inventory implements BinaryTree<DrinksTray> {
     DrinksTray head;
 
     public Inventory(){
-        head = new DrinksTray(6);
+        head = new DrinksTray(8);
         reFill(new DrinksTray(1));
         reFill(new DrinksTray(3));
         reFill(new DrinksTray(5));
         reFill(new DrinksTray(7));
         reFill(new DrinksTray(9));
+        reFill(new DrinksTray(11));
+        reFill(new DrinksTray(13));
+        reFill(new DrinksTray(15));
     }
     public void reFill(DrinksTray element){
         DrinksTray tmp = head;
@@ -70,7 +73,6 @@ public class Inventory implements BinaryTree<DrinksTray> {
                 break;
             }
         }
-        System.out.println(tmp.trayNumber);
         return tmp;
     }
     public void del(int id){
