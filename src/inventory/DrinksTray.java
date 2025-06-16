@@ -45,7 +45,6 @@ public class DrinksTray implements LinkedList {
     DrinksTray right;
 
     int trayNumber;
-    boolean isSelected;
 
     DrinksTray(int trayNumber){
         this.trayNumber = trayNumber;
@@ -83,8 +82,8 @@ public class DrinksTray implements LinkedList {
     public void takeOut(int count){
         for(int i = 0; i<count; i++){
             try{
-            this.tail = this.tail.prev;
-            this.tail.next = null;
+                this.tail = this.tail.prev;
+                this.tail.next = null;
             }catch(NullPointerException e){
                 System.out.printf("Tray %d is Empty", this.trayNumber);
             }
@@ -105,7 +104,7 @@ public class DrinksTray implements LinkedList {
 class debugDrinksTray {
     public static void main(String[] args){
         DrinksTray tray1 = new DrinksTray(1);
-        tray1.takeOut(8);
+        tray1.takeOut(2);
         tray1.search();
     }
 }
