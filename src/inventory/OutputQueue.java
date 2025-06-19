@@ -1,18 +1,11 @@
 package inventory;
 
 import linkedList.LinkedList;
+import moneyBox.*;
 import inventory.Inventory;
 import linkedList.Node;
 
-class product{
-    int index;
-    DrinksTray tray;
-    product next;
-    product(){
-        this.tray = null;
-        this.next = null;
-    }
-}
+import javax.swing.*;
 
 /**
  * class name:
@@ -29,8 +22,27 @@ class product{
 public class OutputQueue implements LinkedList {
     Inventory inventory = new Inventory();
 
-    product front;
-    product rear;
+    public product front;
+    public product rear;
+
+    final private PaymentMachine payBox = new PaymentMachine();;
+
+    public OutputQueue(){
+        this.init();
+        payBox.totalMoneyInput = 0;
+    }
+
+    public int getTotalMoneyInput(){
+        return this.payBox.totalMoneyInput;
+    }
+    public void sumTotalMoneyInput(int add){
+        this.payBox.totalMoneyInput += add;
+    }
+    public void subTotalMoneyInput(int sub){
+        this.payBox.totalMoneyInput -= sub;
+    }
+
+
 
     @Override
     public void init(){
@@ -38,10 +50,10 @@ public class OutputQueue implements LinkedList {
         this.rear = null;
     }
     @Override
-    public void reFill(int val){
+    public void reFill(int id){
         //enqueue, val : tray number
         product newProd = new product();
-        newProd.tray = this.inventory.search(val);
+        newProd.tray = this.inventory.search(id);
 
         if(isEmpty()){
             newProd.index = 0;
@@ -54,22 +66,64 @@ public class OutputQueue implements LinkedList {
         rear = newProd;
     }
     @Override
+    //initialize
     public void takeOut(int val){
-        //dequeue
-        if(!isEmpty()){
-            //del drink in drinks tray
-            this.front.tray.takeOut(1);
-        }else {
-            return ;
+        while(front != null){
+            product tmp = front;
+            front = front.next;
+            tmp = null;
         }
     }
-    public void del(int index){
+    @Override
+    public int takeOut_(int count){
+        //dequeue
+        if(isEmpty()){
+            return -1;
+        }
+        //del drink in drinks tray
+        if(!front.tray.isEmpty()){
+            //정상출력
+            System.out.println(this.front.tray.trayNumber);
+            this.front.tray.takeOut_(1);
+            try{
+                DrinkOut alert = new DrinkOut(this.front.tray.trayNumber);
+                alert.setVisible(true);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            this.front = front.next;
+            return 0;
+        }else{
+            //Empty
+            System.out.println(this.front.tray.trayNumber+"is Empty");
 
+            int tmp = this.front.tray.trayNumber;
+            this.front = front.next;
+            return tmp;
+        }
     }
-    private boolean isEmpty(){
-        if(rear == front && front == null){
-            return true;
-        }else return false;
+    public void del(int id){
+        product tmp = front;
+        product pre = null;
+        while(front != null){
+            if(front.tray.trayNumber == id){
+                if(pre == null){
+                    pre = front;
+                    front = front.next;
+                    pre = null;
+                    return ;
+                }else{
+                    pre.next = front.next;
+                    front = front.next;
+                }
+            }
+            pre = front;
+            front = front.next;
+        }
+        this.front = tmp;
+    }
+    public boolean isEmpty(){
+        return front == null;
     }
     //select drink trays
     //output queue

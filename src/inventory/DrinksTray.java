@@ -44,10 +44,14 @@ public class DrinksTray implements LinkedList {
     DrinksTray left;
     DrinksTray right;
 
-    int trayNumber;
+    public int trayNumber;
+    public int count;
+    public Integer price;
 
-    DrinksTray(int trayNumber){
+    DrinksTray(int trayNumber, int price){
         this.trayNumber = trayNumber;
+        this.price = price;
+        count = 0;
         init();
     }
     @Override
@@ -76,18 +80,25 @@ public class DrinksTray implements LinkedList {
             }
             head.index++;
             tail = tail.next;
+            this.count++;
         }
     }
     @Override
     public void takeOut(int count){
+        return ;
+    }
+    @Override
+    public int takeOut_(int count){
         for(int i = 0; i<count; i++){
             try{
                 this.tail = this.tail.prev;
                 this.tail.next = null;
             }catch(NullPointerException e){
-                System.out.printf("Tray %d is Empty", this.trayNumber);
+                return -1;
             }
+            this.count--;
         }
+        return 0;
     }
     void search(){
         Drinks tmp = head;
@@ -103,8 +114,11 @@ public class DrinksTray implements LinkedList {
 
 class debugDrinksTray {
     public static void main(String[] args){
-        DrinksTray tray1 = new DrinksTray(1);
+        DrinksTray tray1 = new DrinksTray(1, 0);
         tray1.takeOut(2);
+        tray1.takeOut_(6);
+        tray1.reFill(10);
         tray1.search();
+        System.out.println(tray1.count);
     }
 }

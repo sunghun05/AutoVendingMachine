@@ -39,14 +39,14 @@ public class MoneyTray implements LinkedList {
     //10, 50, 100, 500, 1000
     int moneyUnit;
     //maximum capacity of money tray
-    final int sizeOfMoneyTray = 10;
+    final int sizeOfMoneyTray = 50;
     //sum total income
     static int totalIncome = 0;
 
     MoneyTray(int moneyUnit){
         this.next = null;
         //moneyUnit is price of the currency
-        this.top = new Money(-1, moneyUnit);
+        this.top = null;
         this.moneyUnit = moneyUnit;
         init();
     }
@@ -60,36 +60,50 @@ public class MoneyTray implements LinkedList {
     // == append
     @Override
     public void reFill(int count){
-        int start = this.top.index+1;
+        int start;
+        try{
+            start = this.top.index+1;
+        }catch (Exception ex){
+            start = 0;
+        }
         for (int i = start; i<start+count; i++){
-            if(isFull()){System.out.println("Stack Overflow(money tray is full)");break;}
-            else{
-                Money newMoney = new Money(i, this.moneyUnit);
-                if(isEmpty()){
-                    top.next = newMoney;
-                }else{
-                    newMoney.next = top.next;
-                    top.next = newMoney;
-                }
-                System.out.println("top: "+this.top.next.index);
+            Money newMoney = new Money(i, this.moneyUnit);
+
+            if(isEmpty()){
+                top = newMoney;
+            }else if(isFull()) {System.out.println("Stack Overflow " + moneyUnit); break;}
+            else {
+                newMoney.next = top;
+                top = newMoney;
             }
+            System.out.println("top: "+this.top.index);
         }
     }
     @Override
     public void takeOut(int count){
-        for (int i = 0; i<count; i++){
-            if(isEmpty()) {System.out.println("Stack Underflow(no money left)");break;}
-            else{
-                System.out.println("top: "+ (--this.top.next.index));
-                top.next = top.next.next;
-            }
-        }
+
     }
     boolean isFull() {
         return (this.top.index == this.sizeOfMoneyTray-1);
     }
     boolean isEmpty() {
-        return (this.top.next == null);
+        return (this.top == null);
+    }
+
+    @Override
+    public int takeOut_(int count){
+        System.out.println("out "+moneyUnit);
+        for (int i = 0; i<count; i++){
+            if(isEmpty()) {System.out.println("Stack Underflow(no money left)");return -1;}
+            else{
+                System.out.println("top: "+ (this.top.index));
+                Money tmp = top.next;
+                top = null;
+                top = tmp;
+            }
+        }
+        System.out.println("end");
+        return 0;
     }
 }
 /**
@@ -104,8 +118,8 @@ public class MoneyTray implements LinkedList {
 class debugMoneyTray{
     public static void main(String[] args){
         MoneyTray Tray_10 = new MoneyTray(10);
-        Tray_10.takeOut(9);
+        Tray_10.takeOut_(10);
 //        Tray_10.takeOut(2);
-        System.out.println(Tray_10.top.next.index);
+        System.out.println(Tray_10.top.index);
     }
 }

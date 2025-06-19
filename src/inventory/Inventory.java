@@ -20,15 +20,15 @@ public class Inventory implements BinaryTree<DrinksTray> {
     DrinksTray head;
 
     public Inventory(){
-        head = new DrinksTray(8);
-        reFill(new DrinksTray(1));
-        reFill(new DrinksTray(3));
-        reFill(new DrinksTray(5));
-        reFill(new DrinksTray(7));
-        reFill(new DrinksTray(9));
-        reFill(new DrinksTray(11));
-        reFill(new DrinksTray(13));
-        reFill(new DrinksTray(15));
+        head = new DrinksTray(8, 0);
+        reFill(new DrinksTray(1, 200));
+        reFill(new DrinksTray(3, 300));
+        reFill(new DrinksTray(5, 450));
+        reFill(new DrinksTray(7, 500));
+        reFill(new DrinksTray(9, 550));
+        reFill(new DrinksTray(11, 700));
+        reFill(new DrinksTray(13, 750));
+        reFill(new DrinksTray(15, 800));
     }
     public void reFill(DrinksTray element){
         DrinksTray tmp = head;
@@ -55,7 +55,7 @@ public class Inventory implements BinaryTree<DrinksTray> {
         }
     }
     public DrinksTray takeOut(int id, int count){
-        DrinksTray tmp = new DrinksTray(1);
+        DrinksTray tmp = new DrinksTray(1, 0);
         return tmp;
     }
     public void insert(DrinksTray element){
