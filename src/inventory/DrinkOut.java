@@ -13,6 +13,8 @@ public class DrinkOut extends JFrame {
     public static int baseY = 300;
     private final int OFFSET = 50;
 
+    JPanel container;
+
     void fileOut(String drink){
         LocalDateTime now = LocalDateTime.now();
 
@@ -30,11 +32,7 @@ public class DrinkOut extends JFrame {
         }
     }
 
-    public DrinkOut(int drinkId) {
-        setSize(100, 50);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        JPanel container = new JPanel();
+    public void alert(int drinkId) {
         String drink = "";
         switch (drinkId){
             case 1:  drink = "믹스커피"; break;
@@ -49,9 +47,18 @@ public class DrinkOut extends JFrame {
 
         fileOut(drink);
 
-        JLabel drinkName = new JLabel(drink);
+        JLabel drinkName = new JLabel();
+        drinkName.setText(drink+"\t");
         container.add(drinkName);
         add(container);
+
+    }
+
+    public DrinkOut() {
+        setSize(250, 100);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        container = new JPanel();
 
         // 창 위치를 지정 (이전 창보다 OFFSET만큼 아래로)
         setLocation(baseX, baseY);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>9</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>252</x>
-      <y>126</y>
-      <w>612</w>
-      <h>630</h>
+      <x>168</x>
+      <y>60</y>
+      <w>408</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>purchase</panel_attributes>
     <additional_attributes/>
@@ -15,21 +15,21 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>288</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>192</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes>Customer</panel_attributes>
+    <panel_attributes>User</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>522</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>348</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Inventory</panel_attributes>
     <additional_attributes/>
@@ -37,10 +37,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>189</y>
-      <w>27</w>
-      <h>549</h>
+      <x>216</x>
+      <y>102</y>
+      <w>18</w>
+      <h>366</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;590.0</additional_attributes>
@@ -48,10 +48,10 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>504</x>
-      <y>522</y>
-      <w>18</w>
-      <h>18</h>
+      <x>336</x>
+      <y>324</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -59,10 +59,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>405</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>270</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>OutputQueue</panel_attributes>
     <additional_attributes/>
@@ -70,10 +70,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>639</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>426</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>DrinksTray</panel_attributes>
     <additional_attributes/>
@@ -81,10 +81,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>441</x>
-      <y>243</y>
-      <w>18</w>
-      <h>180</h>
+      <x>294</x>
+      <y>138</y>
+      <w>12</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -92,10 +92,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>189</y>
-      <w>27</w>
-      <h>72</h>
+      <x>294</x>
+      <y>102</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -103,10 +103,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>225</y>
-      <w>135</w>
-      <h>36</h>
+      <x>216</x>
+      <y>126</y>
+      <w>90</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 select</panel_attributes>
@@ -116,22 +116,22 @@ select</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>279</y>
-      <w>234</w>
-      <h>63</h>
+      <y>162</y>
+      <w>156</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>When User Selects drink,
-OutputQueue finds drink selected,
+OutputQueue finds selected drink ,
 and enqueue it to the outputQueue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>297</y>
-      <w>117</w>
-      <h>27</h>
+      <x>150</x>
+      <y>174</y>
+      <w>78</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
@@ -139,10 +139,10 @@ and enqueue it to the outputQueue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>189</y>
-      <w>27</w>
-      <h>81</h>
+      <x>372</x>
+      <y>102</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -150,10 +150,10 @@ and enqueue it to the outputQueue</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>558</x>
-      <y>252</y>
-      <w>18</w>
-      <h>54</h>
+      <x>372</x>
+      <y>144</y>
+      <w>12</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -161,10 +161,10 @@ and enqueue it to the outputQueue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>234</y>
-      <w>126</w>
-      <h>36</h>
+      <x>300</x>
+      <y>132</y>
+      <w>84</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 find tray</panel_attributes>
@@ -173,10 +173,10 @@ find tray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>189</y>
-      <w>27</w>
-      <h>441</h>
+      <x>450</x>
+      <y>102</y>
+      <w>18</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;470.0</additional_attributes>
@@ -184,10 +184,10 @@ find tray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
-      <y>612</y>
-      <w>18</w>
-      <h>63</h>
+      <x>450</x>
+      <y>384</y>
+      <w>12</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -195,10 +195,10 @@ find tray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>288</y>
-      <w>126</w>
-      <h>45</h>
+      <x>300</x>
+      <y>168</y>
+      <w>84</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 returns selected 
@@ -208,10 +208,10 @@ drinks tray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>333</y>
-      <w>99</w>
-      <h>81</h>
+      <x>300</x>
+      <y>198</y>
+      <w>66</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 enqueue
@@ -221,10 +221,10 @@ tray info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>450</y>
-      <w>135</w>
-      <h>36</h>
+      <x>216</x>
+      <y>276</y>
+      <w>90</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 purchase</panel_attributes>
@@ -233,10 +233,10 @@ purchase</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>441</x>
-      <y>450</y>
-      <w>18</w>
-      <h>207</h>
+      <x>294</x>
+      <y>276</y>
+      <w>12</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -244,25 +244,24 @@ purchase</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>81</x>
-      <y>459</y>
-      <w>144</w>
-      <h>81</h>
+      <x>48</x>
+      <y>282</y>
+      <w>102</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>When User purchases, 
 dequeue all drinks
 in outputqueue.
-Until user purchases,
-loop select state</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>486</y>
-      <w>117</w>
-      <h>27</h>
+      <x>144</x>
+      <y>300</y>
+      <w>78</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
@@ -270,10 +269,10 @@ loop select state</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>297</y>
-      <w>27</w>
-      <h>171</h>
+      <x>372</x>
+      <y>174</y>
+      <w>18</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -281,10 +280,10 @@ loop select state</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>576</y>
-      <w>360</w>
-      <h>45</h>
+      <x>300</x>
+      <y>360</y>
+      <w>240</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 push() currency into the money box
@@ -294,10 +293,10 @@ push() currency into the money box
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>612</x>
-      <y>522</y>
-      <w>18</w>
-      <h>18</h>
+      <x>408</x>
+      <y>324</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -305,10 +304,10 @@ push() currency into the money box
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>756</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>504</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>MoneyBox</panel_attributes>
     <additional_attributes/>
@@ -316,10 +315,10 @@ push() currency into the money box
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>189</y>
-      <w>27</w>
-      <h>423</h>
+      <x>528</x>
+      <y>102</y>
+      <w>18</w>
+      <h>282</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;450.0</additional_attributes>
@@ -327,10 +326,10 @@ push() currency into the money box
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>792</x>
-      <y>594</y>
-      <w>18</w>
-      <h>81</h>
+      <x>528</x>
+      <y>372</y>
+      <w>12</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -338,23 +337,22 @@ push() currency into the money box
   <element>
     <id>Text</id>
     <coordinates>
-      <x>459</x>
-      <y>477</y>
-      <w>297</w>
-      <h>36</h>
+      <x>636</x>
+      <y>210</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
-    <panel_attributes>[now money - price &lt; 0 || queue == empty
-|| no drink]
+    <panel_attributes>money tray == null
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>414</y>
-      <w>27</w>
-      <h>54</h>
+      <x>294</x>
+      <y>252</y>
+      <w>18</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -362,10 +360,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>387</x>
-      <y>432</y>
-      <w>432</w>
-      <h>270</h>
+      <x>258</x>
+      <y>264</y>
+      <w>288</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>loop</panel_attributes>
     <additional_attributes/>
@@ -373,10 +371,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>405</x>
-      <y>477</y>
-      <w>351</w>
-      <h>99</h>
+      <x>270</x>
+      <y>294</y>
+      <w>234</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>break</panel_attributes>
     <additional_attributes/>
@@ -384,10 +382,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>612</y>
-      <w>369</w>
-      <h>36</h>
+      <x>216</x>
+      <y>384</y>
+      <w>246</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 outputs drinks</panel_attributes>
@@ -396,10 +394,10 @@ outputs drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>594</y>
-      <w>243</w>
-      <h>36</h>
+      <x>300</x>
+      <y>372</y>
+      <w>162</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 request drink</panel_attributes>
@@ -408,10 +406,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>648</y>
-      <w>27</w>
-      <h>90</h>
+      <x>294</x>
+      <y>408</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -419,10 +417,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>666</y>
-      <w>27</w>
-      <h>72</h>
+      <x>450</x>
+      <y>420</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -430,10 +428,10 @@ request drink</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>558</x>
-      <y>450</y>
-      <w>18</w>
-      <h>18</h>
+      <x>372</x>
+      <y>276</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -441,10 +439,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>666</y>
-      <w>27</w>
-      <h>72</h>
+      <x>528</x>
+      <y>420</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -452,10 +450,10 @@ request drink</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>252</x>
-      <y>792</y>
-      <w>360</w>
-      <h>360</h>
+      <x>168</x>
+      <y>504</y>
+      <w>240</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>Enter Admin</panel_attributes>
     <additional_attributes/>
@@ -463,10 +461,10 @@ request drink</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>279</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>186</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -474,10 +472,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>837</y>
-      <w>27</w>
-      <h>315</h>
+      <x>210</x>
+      <y>534</y>
+      <w>18</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
@@ -485,10 +483,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>837</y>
-      <w>27</w>
-      <h>72</h>
+      <x>294</x>
+      <y>534</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -496,10 +494,10 @@ request drink</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>405</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>270</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Admin</panel_attributes>
     <additional_attributes/>
@@ -507,10 +505,10 @@ request drink</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>441</x>
-      <y>891</y>
-      <w>18</w>
-      <h>180</h>
+      <x>294</x>
+      <y>570</y>
+      <w>12</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -518,10 +516,10 @@ request drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>873</y>
-      <w>144</w>
-      <h>36</h>
+      <x>210</x>
+      <y>558</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 access admin page</panel_attributes>
@@ -530,10 +528,10 @@ access admin page</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>936</y>
-      <w>117</w>
-      <h>81</h>
+      <x>300</x>
+      <y>600</y>
+      <w>78</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 open admin
@@ -543,10 +541,10 @@ window</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>396</x>
-      <y>900</y>
-      <w>198</w>
-      <h>198</h>
+      <x>264</x>
+      <y>576</y>
+      <w>132</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>alt
 bg=WHITE</panel_attributes>
@@ -555,10 +553,10 @@ bg=WHITE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>918</y>
-      <w>144</w>
-      <h>36</h>
+      <x>210</x>
+      <y>588</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 enter password</panel_attributes>
@@ -567,10 +565,10 @@ enter password</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>459</x>
-      <y>900</y>
-      <w>144</w>
-      <h>27</h>
+      <x>306</x>
+      <y>576</y>
+      <w>96</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>[input == password]
 style=wordwrap
@@ -582,10 +580,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>1026</y>
-      <w>225</w>
-      <h>27</h>
+      <x>258</x>
+      <y>660</y>
+      <w>150</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
@@ -593,10 +591,10 @@ layer=1</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>504</x>
-      <y>1035</y>
-      <w>54</w>
-      <h>27</h>
+      <x>336</x>
+      <y>666</y>
+      <w>36</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>[else]
 style=wordwrap
@@ -606,10 +604,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>1053</y>
-      <w>144</w>
-      <h>36</h>
+      <x>210</x>
+      <y>678</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 error</panel_attributes>
@@ -618,10 +616,10 @@ error</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>639</x>
-      <y>792</y>
-      <w>603</w>
-      <h>279</h>
+      <x>426</x>
+      <y>504</y>
+      <w>402</w>
+      <h>186</h>
     </coordinates>
     <panel_attributes>Fill Drinks</panel_attributes>
     <additional_attributes/>
@@ -629,10 +627,10 @@ error</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>666</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>444</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -640,10 +638,10 @@ error</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>837</y>
-      <w>27</w>
-      <h>225</h>
+      <x>468</x>
+      <y>534</y>
+      <w>18</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
@@ -651,10 +649,10 @@ error</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>801</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>534</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Admin</panel_attributes>
     <additional_attributes/>
@@ -662,10 +660,10 @@ error</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>882</y>
-      <w>153</w>
-      <h>36</h>
+      <x>468</x>
+      <y>564</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 refill drinks</panel_attributes>
@@ -674,10 +672,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>837</y>
-      <w>27</w>
-      <h>81</h>
+      <x>558</x>
+      <y>534</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -685,10 +683,10 @@ refill drinks</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>945</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>630</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Inventory</panel_attributes>
     <additional_attributes/>
@@ -696,10 +694,10 @@ refill drinks</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1080</x>
-      <y>819</y>
-      <w>90</w>
-      <h>27</h>
+      <x>720</x>
+      <y>522</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>DrinksTray</panel_attributes>
     <additional_attributes/>
@@ -707,10 +705,10 @@ refill drinks</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>837</x>
-      <y>900</y>
-      <w>18</w>
-      <h>90</h>
+      <x>558</x>
+      <y>576</y>
+      <w>12</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -718,10 +716,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>891</y>
-      <w>153</w>
-      <h>36</h>
+      <x>564</x>
+      <y>570</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 give drink info</panel_attributes>
@@ -730,10 +728,10 @@ give drink info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>981</x>
-      <y>837</y>
-      <w>27</w>
-      <h>90</h>
+      <x>654</x>
+      <y>534</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -741,10 +739,10 @@ give drink info</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>981</x>
-      <y>909</y>
-      <w>18</w>
-      <h>36</h>
+      <x>654</x>
+      <y>582</y>
+      <w>12</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -752,10 +750,10 @@ give drink info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
-      <y>927</y>
-      <w>144</w>
-      <h>36</h>
+      <x>660</x>
+      <y>594</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 give drink info</panel_attributes>
@@ -764,10 +762,10 @@ give drink info</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1116</x>
-      <y>945</y>
-      <w>18</w>
-      <h>45</h>
+      <x>744</x>
+      <y>606</y>
+      <w>12</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -775,10 +773,10 @@ give drink info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>837</y>
-      <w>27</w>
-      <h>126</h>
+      <x>744</x>
+      <y>534</y>
+      <w>18</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -786,10 +784,10 @@ give drink info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>981</y>
-      <w>288</w>
-      <h>27</h>
+      <x>564</x>
+      <y>630</y>
+      <w>192</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
@@ -797,10 +795,10 @@ give drink info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1125</x>
-      <y>945</y>
-      <w>117</w>
-      <h>63</h>
+      <x>750</x>
+      <y>606</y>
+      <w>78</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 refill drinks</panel_attributes>
@@ -809,10 +807,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>981</x>
-      <y>936</y>
-      <w>27</w>
-      <h>126</h>
+      <x>654</x>
+      <y>600</y>
+      <w>18</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -820,10 +818,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>981</y>
-      <w>27</w>
-      <h>81</h>
+      <x>744</x>
+      <y>630</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -831,10 +829,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>981</y>
-      <w>27</w>
-      <h>81</h>
+      <x>558</x>
+      <y>630</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -842,10 +840,10 @@ refill drinks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>972</y>
-      <w>153</w>
-      <h>36</h>
+      <x>468</x>
+      <y>624</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 complete message</panel_attributes>
@@ -854,10 +852,10 @@ complete message</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>639</x>
-      <y>1098</y>
-      <w>612</w>
-      <h>288</h>
+      <x>426</x>
+      <y>708</y>
+      <w>408</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>get currency</panel_attributes>
     <additional_attributes/>
@@ -865,10 +863,10 @@ complete message</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>666</x>
-      <y>1125</y>
-      <w>90</w>
-      <h>27</h>
+      <x>444</x>
+      <y>726</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -876,10 +874,10 @@ complete message</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>1143</y>
-      <w>27</w>
-      <h>234</h>
+      <x>468</x>
+      <y>738</y>
+      <w>18</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
@@ -887,10 +885,10 @@ complete message</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>522</y>
-      <w>81</w>
-      <h>27</h>
+      <x>300</x>
+      <y>324</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -898,10 +896,10 @@ complete message</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>612</x>
-      <y>522</y>
-      <w>90</w>
-      <h>27</h>
+      <x>408</x>
+      <y>324</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
@@ -909,10 +907,10 @@ complete message</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>801</x>
-      <y>1125</y>
-      <w>90</w>
-      <h>27</h>
+      <x>534</x>
+      <y>726</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Admin</panel_attributes>
     <additional_attributes/>
@@ -920,10 +918,10 @@ complete message</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>1197</y>
-      <w>153</w>
-      <h>36</h>
+      <x>468</x>
+      <y>774</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 get money</panel_attributes>
@@ -932,10 +930,10 @@ get money</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>837</x>
-      <y>1215</y>
-      <w>18</w>
-      <h>27</h>
+      <x>558</x>
+      <y>786</y>
+      <w>12</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -943,10 +941,10 @@ get money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>1143</y>
-      <w>27</w>
-      <h>90</h>
+      <x>558</x>
+      <y>738</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -954,10 +952,10 @@ get money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>1224</y>
-      <w>144</w>
-      <h>36</h>
+      <x>564</x>
+      <y>792</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 find money tray</panel_attributes>
@@ -966,10 +964,10 @@ find money tray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>1125</y>
-      <w>90</w>
-      <h>27</h>
+      <x>624</x>
+      <y>726</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>MoneyBox</panel_attributes>
     <additional_attributes/>
@@ -977,10 +975,10 @@ find money tray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>972</x>
-      <y>1143</y>
-      <w>27</w>
-      <h>117</h>
+      <x>648</x>
+      <y>738</y>
+      <w>18</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -988,10 +986,10 @@ find money tray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>972</x>
-      <y>1242</y>
-      <w>18</w>
-      <h>27</h>
+      <x>648</x>
+      <y>804</y>
+      <w>12</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -999,10 +997,10 @@ find money tray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1071</x>
-      <y>1125</y>
-      <w>90</w>
-      <h>27</h>
+      <x>714</x>
+      <y>726</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>MoneyTray</panel_attributes>
     <additional_attributes/>
@@ -1010,10 +1008,10 @@ find money tray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>981</x>
-      <y>1251</y>
-      <w>144</w>
-      <h>36</h>
+      <x>654</x>
+      <y>810</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 give money count</panel_attributes>
@@ -1022,10 +1020,10 @@ give money count</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1107</x>
-      <y>1143</y>
-      <w>27</w>
-      <h>144</h>
+      <x>738</x>
+      <y>738</y>
+      <w>18</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -1033,10 +1031,10 @@ give money count</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1107</x>
-      <y>1269</y>
-      <w>18</w>
-      <h>45</h>
+      <x>738</x>
+      <y>822</y>
+      <w>12</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1044,10 +1042,10 @@ give money count</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>1296</y>
-      <w>423</w>
-      <h>36</h>
+      <x>468</x>
+      <y>840</y>
+      <w>282</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 return money</panel_attributes>
@@ -1056,10 +1054,10 @@ return money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>1233</y>
-      <w>27</w>
-      <h>144</h>
+      <x>558</x>
+      <y>798</y>
+      <w>18</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -1067,10 +1065,10 @@ return money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>972</x>
-      <y>1260</y>
-      <w>27</w>
-      <h>117</h>
+      <x>648</x>
+      <y>816</y>
+      <w>18</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -1078,10 +1076,10 @@ return money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1107</x>
-      <y>1305</y>
-      <w>27</w>
-      <h>72</h>
+      <x>738</x>
+      <y>846</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -1089,10 +1087,10 @@ return money</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>612</y>
-      <w>99</w>
-      <h>81</h>
+      <x>456</x>
+      <y>384</y>
+      <w>66</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 make log
@@ -1102,10 +1100,10 @@ with file</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>252</x>
-      <y>1170</y>
-      <w>324</w>
-      <h>261</h>
+      <x>168</x>
+      <y>756</y>
+      <w>216</w>
+      <h>174</h>
     </coordinates>
     <panel_attributes>Get log</panel_attributes>
     <additional_attributes/>
@@ -1113,10 +1111,10 @@ with file</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>279</x>
-      <y>1197</y>
-      <w>90</w>
-      <h>27</h>
+      <x>186</x>
+      <y>774</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -1124,10 +1122,10 @@ with file</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>1215</y>
-      <w>27</w>
-      <h>198</h>
+      <x>210</x>
+      <y>786</y>
+      <w>18</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -1135,10 +1133,10 @@ with file</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>414</x>
-      <y>1197</y>
-      <w>90</w>
-      <h>27</h>
+      <x>276</x>
+      <y>774</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Admin</panel_attributes>
     <additional_attributes/>
@@ -1146,10 +1144,10 @@ with file</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>1215</y>
-      <w>27</w>
-      <h>72</h>
+      <x>300</x>
+      <y>786</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -1157,10 +1155,10 @@ with file</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>450</x>
-      <y>1269</y>
-      <w>18</w>
-      <h>81</h>
+      <x>300</x>
+      <y>822</y>
+      <w>12</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1168,10 +1166,10 @@ with file</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>1251</y>
-      <w>153</w>
-      <h>36</h>
+      <x>210</x>
+      <y>810</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 request logs</panel_attributes>
@@ -1180,10 +1178,10 @@ request logs</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>459</x>
-      <y>1269</y>
-      <w>108</w>
-      <h>81</h>
+      <x>306</x>
+      <y>822</y>
+      <w>72</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 get log file</panel_attributes>
@@ -1192,10 +1190,10 @@ get log file</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>1332</y>
-      <w>153</w>
-      <h>36</h>
+      <x>210</x>
+      <y>864</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 return log</panel_attributes>
@@ -1204,10 +1202,10 @@ return log</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>1341</y>
-      <w>27</w>
-      <h>72</h>
+      <x>300</x>
+      <y>870</y>
+      <w>18</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -1215,10 +1213,10 @@ return log</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>891</x>
-      <y>126</y>
-      <w>630</w>
-      <h>630</h>
+      <x>594</x>
+      <y>60</y>
+      <w>234</w>
+      <h>258</h>
     </coordinates>
     <panel_attributes>purchase step</panel_attributes>
     <additional_attributes/>
@@ -1226,10 +1224,10 @@ return log</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>909</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>606</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>MoneyBox</panel_attributes>
     <additional_attributes/>
@@ -1237,56 +1235,45 @@ return log</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>945</x>
-      <y>189</y>
-      <w>27</w>
-      <h>63</h>
+      <x>630</x>
+      <y>102</y>
+      <w>18</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>801</x>
-      <y>225</y>
-      <w>162</w>
-      <h>396</h>
+      <x>534</x>
+      <y>138</y>
+      <w>114</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 
 </panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;420.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>945</x>
-      <y>234</y>
-      <w>18</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
+    <additional_attributes>170.0;10.0;10.0;400.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1089</x>
-      <y>189</y>
-      <w>27</w>
-      <h>81</h>
+      <x>726</x>
+      <y>102</y>
+      <w>18</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1053</x>
-      <y>171</y>
-      <w>90</w>
-      <h>27</h>
+      <x>702</x>
+      <y>90</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>MoneyTray</panel_attributes>
     <additional_attributes/>
@@ -1294,10 +1281,10 @@ return log</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1089</x>
-      <y>252</y>
-      <w>18</w>
-      <h>126</h>
+      <x>726</x>
+      <y>156</y>
+      <w>12</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1305,14 +1292,95 @@ return log</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>954</x>
-      <y>234</y>
-      <w>153</w>
-      <h>45</h>
+      <x>630</x>
+      <y>144</y>
+      <w>108</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 
 </panel_attributes>
-    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>600</x>
+      <y>126</y>
+      <w>204</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>loop</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>630</x>
+      <y>288</y>
+      <w>12</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>162</y>
+      <w>54</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+push 
+money</panel_attributes>
+    <additional_attributes>10.0;70.0;30.0;70.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>726</x>
+      <y>216</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>726</x>
+      <y>288</y>
+      <w>12</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>606</x>
+      <y>168</y>
+      <w>114</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>break</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>318</x>
+      <y>306</y>
+      <w>198</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>[now money - price &lt; 0 || queue == empty
+|| no drink]
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

@@ -32,11 +32,15 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
 
     MoneyTmp front;
     MoneyTmp rear;
+
+    public Integer totalMoneyInMachine;
+
     public MoneyBox(){
         init();
         front = null;
         rear = null;
         this.paymentMachine = paymentMachine;
+        this.totalMoneyInMachine = 16600;
     }
     @Override
     public void init(){
@@ -70,10 +74,7 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
             System.out.println(tmp.moneyUnit);
         }
     }
-    //use linked list
-//    int[] getMoneyLog(){
-//
-//    }
+
     @Override
     public int takeOut_(int count){
         return 0;
@@ -86,31 +87,6 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
         }
         return null;
     }
-    //enqueue
-    public void receiveMoney(int moneyUnit){
-        MoneyTmp newMoney = new MoneyTmp(moneyUnit);
-        newMoney.next = null;
-        if(isEmptyTmp()){
-            front = newMoney;
-            rear = front;
-        }else{
-            rear.next = newMoney;
-            rear = rear.next;
-        }
-    }
-    //dequeue all (store money)
-    public void pushMoney(){
-        while(!isEmptyTmp()){
-            MoneyTray tmp = head;
-            while(tmp != null){
-                if(tmp.moneyUnit == front.moneyUnit){
-                    tmp.reFill(1);
-                }
-                tmp = tmp.next;
-            }
-            front = front.next;
-        }
-    }
     public void changeNstore(int price) {
         MoneyTray tmp = head;
 
@@ -122,6 +98,7 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
             price -= units[i] * counts[i];
 
             tmp.reFill(counts[i]);
+            this.totalMoneyInMachine += counts[i]*units[i];
             tmp = tmp.next;
         }
     }
@@ -130,22 +107,28 @@ public class MoneyBox extends PaymentMachine implements LinkedList {
 
         Integer[] units = {1000, 500, 100, 50, 10};
         Integer[] counts = new Integer[5];
-
+        MoneyOut out = new MoneyOut();
         for(int i = 0; i<5; i++){
             counts[i] = price / units[i];
-            price -= units[i] * counts[i];
-            if(counts[i] != 0) {System.out.println(units[i]+": "+counts[i]+"개");}
             int res = tmp.takeOut_(counts[i]);
-            if(res != -1){
+            price -= units[i] * counts[i];
+            this.totalMoneyInMachine -= counts[i]*units[i];
+            if(res == 0){
+
+                if(counts[i] != 0) {System.out.println(units[i]+": "+counts[i]+"개");}
                 for(int j = 0; j<counts[i]; j++){
-                    new MoneyOut(units[i]);
+                    out.alert(units[i]);
                 }
+
             }else{
-                new MoneyOut(-1);
+                for(int j = 0; j<res + counts[i]; j++){
+                    out.alert(units[i]);
+                }
+                out.alert(-1);
+                price -= units[i] * res;
+                this.totalMoneyInMachine -= res*units[i];
             }
 
-
-//            if(res == -1
             tmp = tmp.next;
         }
     }

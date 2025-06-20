@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1060</x>
-      <y>500</y>
-      <w>220</w>
-      <h>140</h>
+      <x>848</x>
+      <y>392</y>
+      <w>176</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>//음료 저장
 //판매중(재고있음), 금액 저장
@@ -30,14 +30,15 @@ Inventory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>940</y>
-      <w>180</w>
-      <h>90</h>
+      <x>896</x>
+      <y>744</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Drink
 --
 +index: int
++next: Drink
 --
 +Drinks(count): void
 //generator</panel_attributes>
@@ -46,10 +47,10 @@ Inventory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1150</x>
-      <y>630</y>
-      <w>60</w>
-      <h>80</h>
+      <x>920</x>
+      <y>496</y>
+      <w>48</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=8</panel_attributes>
@@ -58,10 +59,10 @@ m1=8</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1280</x>
-      <y>490</y>
-      <w>160</w>
-      <h>60</h>
+      <x>1024</x>
+      <y>384</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Default the number of 
 type of drinks is 8
@@ -72,9 +73,9 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>570</y>
-      <w>210</w>
+      <x>456</x>
+      <y>448</y>
+      <w>168</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>//Calculate Change
@@ -85,16 +86,21 @@ MoneyBox
 --
 +calculateChanges(int): int[5]
 +getMoneyLog(): int[5]
++init():void
++reFill():void
++takeOut():void
++search(int):MoneyTray
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>930</x>
-      <y>610</y>
-      <w>90</w>
-      <h>30</h>
+      <x>672</x>
+      <y>1000</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>LinkedList
 bg=yellow</panel_attributes>
@@ -103,27 +109,28 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1380</x>
-      <y>640</y>
-      <w>140</w>
+      <x>1104</x>
+      <y>504</y>
+      <w>112</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>OutputQueue
 //Queue Data Structure which stores selected drinks
 --
--front: MoneyBox
--back: MoneyBox
+-front: DrinksTray
+-back: DrinksTray
 --
-</panel_attributes>
++enqueue():void
++dequeue():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>860</y>
-      <w>190</w>
-      <h>80</h>
+      <x>288</x>
+      <y>680</y>
+      <w>152</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Money
 --
@@ -138,10 +145,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>610</y>
-      <w>160</w>
-      <h>80</h>
+      <x>344</x>
+      <y>480</y>
+      <w>128</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=5</panel_attributes>
@@ -150,10 +157,10 @@ m1=5</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>490</y>
-      <w>210</w>
-      <h>80</h>
+      <x>280</x>
+      <y>384</y>
+      <w>168</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>PaymentMachine
 --
@@ -164,10 +171,10 @@ m1=5</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1270</x>
-      <y>560</y>
-      <w>250</w>
-      <h>100</h>
+      <x>1016</x>
+      <y>440</y>
+      <w>200</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>230.0;80.0;230.0;10.0;10.0;10.0</additional_attributes>
@@ -175,13 +182,12 @@ m1=5</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>500</y>
-      <w>190</w>
-      <h>140</h>
+      <x>592</x>
+      <y>968</y>
+      <w>152</w>
+      <h>112</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-LinkedList: Class
+    <panel_attributes>/LinkedList/
 --
 +init()
 +reFill()
@@ -192,32 +198,21 @@ LinkedList: Class
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1270</x>
-      <y>550</y>
-      <w>310</w>
-      <h>30</h>
+      <x>1016</x>
+      <y>432</y>
+      <w>248</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>290.0;10.0;230.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>770</x>
-      <y>630</y>
-      <w>90</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>70.0;10.0;70.0;50.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>850</x>
-      <y>720</y>
-      <w>170</w>
-      <h>140</h>
+      <x>784</x>
+      <y>968</y>
+      <w>136</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>/Node/
 --
@@ -233,24 +228,12 @@ LinkedList: Class
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>930</x>
-      <y>850</y>
-      <w>210</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=child</panel_attributes>
-    <additional_attributes>190.0;130.0;10.0;70.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>40</y>
-      <w>170</w>
-      <h>160</h>
+      <x>592</x>
+      <y>24</y>
+      <w>136</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>AdminInfo
 --
@@ -269,25 +252,12 @@ m1=child</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>540</x>
-      <y>850</y>
-      <w>460</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=child
-m2=parent</panel_attributes>
-    <additional_attributes>10.0;70.0;400.0;70.0;400.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1280</x>
-      <y>600</y>
-      <w>190</w>
-      <h>40</h>
+      <x>1024</x>
+      <y>472</y>
+      <w>152</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Inventory, OutputQueue
 should be integreted
@@ -297,10 +267,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>310</y>
-      <w>180</w>
-      <h>110</h>
+      <x>648</x>
+      <y>240</y>
+      <w>144</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>showMoneyBox
 --
@@ -316,10 +286,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>310</y>
-      <w>190</w>
-      <h>110</h>
+      <x>808</x>
+      <y>240</y>
+      <w>152</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>showInventory
 --
@@ -331,51 +301,12 @@ bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1000</x>
-      <y>40</y>
-      <w>190</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-MachineState
---
-+init()
-+reFill()
-+TakeOut()
-+sumTotalIncome(): int</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>150</y>
-      <w>130</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>110.0;10.0;110.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1060</x>
-      <y>150</y>
-      <w>30</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>900</x>
-      <y>150</y>
-      <w>60</w>
-      <h>180</h>
+      <x>720</x>
+      <y>112</y>
+      <w>48</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>40.0;160.0;40.0;40.0;10.0;10.0</additional_attributes>
@@ -383,10 +314,10 @@ MachineState
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>150</y>
-      <w>230</w>
-      <h>180</h>
+      <x>720</x>
+      <y>112</y>
+      <w>184</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>210.0;160.0;210.0;40.0;40.0;40.0;10.0;10.0</additional_attributes>
@@ -394,10 +325,10 @@ MachineState
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>590</x>
-      <y>10</y>
-      <w>720</w>
-      <h>420</h>
+      <x>584</x>
+      <y>0</y>
+      <w>384</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>admin
 --
@@ -408,10 +339,10 @@ lw=2
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>820</x>
-      <y>450</y>
-      <w>210</w>
-      <h>510</h>
+      <x>584</x>
+      <y>936</y>
+      <w>352</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>linkedList
 --
@@ -422,10 +353,10 @@ lw=2
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1050</x>
-      <y>450</y>
-      <w>480</w>
-      <h>590</h>
+      <x>840</x>
+      <y>352</y>
+      <w>384</w>
+      <h>472</h>
     </coordinates>
     <panel_attributes>inventory
 --
@@ -436,10 +367,10 @@ lw=2
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>340</x>
-      <y>450</y>
-      <w>460</w>
-      <h>510</h>
+      <x>272</x>
+      <y>352</y>
+      <w>368</w>
+      <h>408</h>
     </coordinates>
     <panel_attributes>moneyBox
 --
@@ -450,27 +381,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>250</y>
-      <w>170</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>changeMethods
---
-//change search methods 
-//for every search algorithms
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>360</x>
-      <y>670</y>
-      <w>190</w>
-      <h>80</h>
+      <x>288</x>
+      <y>528</y>
+      <w>152</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>//Stack Algorithm with linkedlist
 MoneyTray
@@ -480,81 +394,66 @@ MoneyTray
 +IsEmpty(): boolean
 //max Money count differs by money
 +IsFull(): boolean
-</panel_attributes>
++init():void
++reFill():void
++takeOut():void
++search(int):MoneyTray</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>740</y>
+      <x>344</x>
+      <y>632</y>
       <w>40</w>
-      <h>140</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=10</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1140</x>
-      <y>690</y>
-      <w>220</w>
-      <h>140</h>
+      <x>912</x>
+      <y>544</y>
+      <w>176</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>//Queue Algorithm with linkedlist
 DrinksTray
 --
 -head: Drink
++left: DrinksTray
++right: DrinksTray
 --
 +ReFill(int): void
 //parameter of ReFill is name of drink, the number of the drink
 +TakeOut(int): void
-isEmpty(): boolean</panel_attributes>
+-isEmpty(): boolean
++dequeue():void
++enqueue():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1190</x>
-      <y>820</y>
-      <w>60</w>
-      <h>140</h>
+      <x>952</x>
+      <y>664</y>
+      <w>48</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=..10</panel_attributes>
-    <additional_attributes>10.0;120.0;40.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>540</x>
-      <y>630</y>
-      <w>320</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>300.0;10.0;300.0;100.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>980</x>
-      <y>630</y>
-      <w>180</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;160.0;100.0</additional_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1270</x>
-      <y>660</y>
-      <w>90</w>
-      <h>30</h>
+      <x>1016</x>
+      <y>520</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Deq
 bg=yellow</panel_attributes>
@@ -563,10 +462,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>460</x>
-      <y>640</y>
-      <w>90</w>
-      <h>30</h>
+      <x>368</x>
+      <y>504</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Stack
 bg=yellow</panel_attributes>
@@ -576,9 +475,9 @@ bg=yellow</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>580</y>
-      <w>320</w>
-      <h>210</h>
+      <y>456</y>
+      <w>256</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>Class Comment
 /**
@@ -597,10 +496,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>520</y>
-      <w>150</w>
-      <h>70</h>
+      <x>440</x>
+      <y>408</y>
+      <w>120</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=child
@@ -608,38 +507,12 @@ m2=parent</panel_attributes>
     <additional_attributes>100.0;50.0;100.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>720</x>
-      <y>360</y>
-      <w>110</w>
-      <h>230</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=child
-m2=parent</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0;10.0;210.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1190</x>
-      <y>360</y>
-      <w>130</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=child
-m2=parent</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0;70.0;140.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1060</x>
-      <y>470</y>
-      <w>90</w>
-      <h>30</h>
+      <x>848</x>
+      <y>368</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>BinaryTree
 bg=yellow</panel_attributes>
@@ -648,10 +521,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1560</x>
-      <y>500</y>
-      <w>190</w>
-      <h>140</h>
+      <x>1248</x>
+      <y>392</y>
+      <w>152</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 BinaryTree: generic

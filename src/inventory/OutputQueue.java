@@ -27,6 +27,8 @@ public class OutputQueue implements LinkedList {
 
     final private PaymentMachine payBox = new PaymentMachine();;
 
+    private DrinkOut alert;
+
     public OutputQueue(){
         this.init();
         payBox.totalMoneyInput = 0;
@@ -74,6 +76,14 @@ public class OutputQueue implements LinkedList {
             tmp = null;
         }
     }
+    public void alert(){
+        try{
+            this.alert = new DrinkOut();
+            alert.setVisible(true);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
     @Override
     public int takeOut_(int count){
         //dequeue
@@ -85,12 +95,7 @@ public class OutputQueue implements LinkedList {
             //정상출력
             System.out.println(this.front.tray.trayNumber);
             this.front.tray.takeOut_(1);
-            try{
-                DrinkOut alert = new DrinkOut(this.front.tray.trayNumber);
-                alert.setVisible(true);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+            alert.alert(this.front.tray.trayNumber);
             this.front = front.next;
             return 0;
         }else{

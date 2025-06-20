@@ -94,12 +94,13 @@ public class MoneyTray implements LinkedList {
     public int takeOut_(int count){
         System.out.println("out "+moneyUnit);
         for (int i = 0; i<count; i++){
-            if(isEmpty()) {System.out.println("Stack Underflow(no money left)");return -1;}
+            if(isEmpty()) {System.out.println("Stack Underflow(no money left): returns "+-1*(count-i) );return -1*(count-i);}
             else{
                 System.out.println("top: "+ (this.top.index));
                 Money tmp = top.next;
                 top = null;
                 top = tmp;
+
             }
         }
         System.out.println("end");

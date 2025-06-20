@@ -1,10 +1,16 @@
 package admin;
 
+import inventory.Inventory;
+import inventory.OutputQueue;
+import moneyBox.MoneyBox;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,16 +24,34 @@ public class AdminInfo extends JFrame implements ActionListener {
     private static String currentId;
     private static String currentPassword;
 
-    public AdminInfo() {
+    private int currentIncome = 0; // 수입 저장 변수
+    private JLabel incomeLabel; // 수입 라벨 참조 변수
+    private int totalMoneyInMachine;
+    private JLabel totalMoney;
+    JButton[] allbtns;
+
+    OutputQueue outputQueue;
+    MoneyBox moneyBox;
+
+    public AdminInfo(OutputQueue outputQueue,
+                     MoneyBox moneyBox, JButton[] allbtns) {
         super("관리자 정보 시스템");
+
+        this.outputQueue = outputQueue;
+        this.moneyBox = moneyBox;
+
         loadCredentials(); // 파일에서 아이디와 비밀번호 불러오기
 
         // 버튼 설정
         accessAdminBtn = new JButton("관리자 메뉴 접근");
         changePasswordBtn = new JButton("비밀번호 변경");
 
+        this.allbtns = allbtns;
+
         accessAdminBtn.addActionListener(this);
         changePasswordBtn.addActionListener(this);
+
+        this.totalMoneyInMachine = moneyBox.totalMoneyInMachine;
 
         // 레이아웃 설정
         JPanel panel = new JPanel(new GridLayout(2, 1, 10, 10));
@@ -169,13 +193,22 @@ public class AdminInfo extends JFrame implements ActionListener {
         JFrame adminFrame = new JFrame("관리자 정보 메뉴");
         adminFrame.setSize(600, 520);
         adminFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        adminFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                for(int i = 0; i<16; i++){
+                   allbtns[i].setEnabled(true);
 
-        // 환영 메시지 라벨 (굵은 폰트, 여백)
-        JLabel welcomeLabel = new JLabel("<html><b>" + currentId + "님, 관리자 메뉴에<br>접근하셨습니다.</b></html>", SwingConstants.CENTER);
+                }
+            }
+        });
+
+        // 환영 메시지
+        JLabel welcomeLabel = new JLabel(currentId + "님, 관리자 메뉴에 접근하셨습니다.", SwingConstants.CENTER);
         welcomeLabel.setFont(new Font("맑은 고딕", Font.BOLD, 22));
         welcomeLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
 
-        // 음료 종류별 개수 표(Table)
+        // 음료 종류별 개수 표
         String[] columns = {"음료명", "개수"};
         String[] beverageTypes = {"믹스커피", "고급 믹스커피", "물", "캔커피", "이온음료", "고급 캔커피", "탄산음료", "특화음료"};
         Map<String, Integer> beverageCounts = getBeverageCounts();
@@ -195,32 +228,49 @@ public class AdminInfo extends JFrame implements ActionListener {
         tablePane.setBorder(BorderFactory.createTitledBorder("음료별 판매 현황"));
         tablePane.setPreferredSize(new Dimension(320, 250));
 
-        // 현재 수입 라벨 (강조)
-        JLabel incomeLabel = new JLabel("현재 수입: 0원", SwingConstants.CENTER);
+        // 현재 수입 라벨
+        incomeLabel = new JLabel("현재 수입: " + moneyBox.totalMoneyInMachine + "원", SwingConstants.CENTER);
         incomeLabel.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-        incomeLabel.setForeground(new Color(40, 100, 200));
-        incomeLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 20, 0));
+        incomeLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
-        // 버튼 스타일 개선
-        JButton logViewBtn = new JButton("로그 보기");
-        JButton logViewBtn2 = new JButton("로그 보기2");
+        // 수금 입력 패널
+        JPanel collectPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
+        JLabel amountLabel = new JLabel("수금 금액:");
+        JTextField amountField = new JTextField(10);
         JButton collectBtn = new JButton("수금");
-        Font btnFont = new Font("맑은 고딕", Font.BOLD, 16);
-        logViewBtn.setFont(btnFont);
-        logViewBtn2.setFont(btnFont);
-        collectBtn.setFont(btnFont);
 
-        Dimension btnSize = new Dimension(140, 40);
-        logViewBtn.setPreferredSize(btnSize);
-        logViewBtn2.setPreferredSize(btnSize);
-        collectBtn.setPreferredSize(btnSize);
+        collectBtn.setFont(new Font("맑은 고딕", Font.BOLD, 16));
+        collectBtn.setPreferredSize(new Dimension(80, 30));
 
-        // 버튼 패널 (간격 넓힘)
+        // 수금 버튼 액션
+        collectBtn.addActionListener(e -> {
+            try {
+                int amount = Integer.parseInt(amountField.getText().trim());
+                currentIncome += amount;
+                moneyBox.changeNreceive(amount);
+                incomeLabel.setText("현재 수입: " + moneyBox.totalMoneyInMachine + "원");
+                saveIncomeData();
+                amountField.setText("");
+                JOptionPane.showMessageDialog(adminFrame, amount + "원이 수금되었습니다.");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(adminFrame, "유효한 숫자를 입력하세요!", "입력 오류", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+
+        collectPanel.add(amountLabel);
+        collectPanel.add(amountField);
+        collectPanel.add(collectBtn);
+
+        // 버튼 패널
+        JButton logViewBtn = new JButton("일별/월별 매출");
+        JButton logViewBtn2 = new JButton("음료별 일별/월별 매출");
+        logViewBtn.setFont(new Font("맑은 고딕", Font.BOLD, 16));
+        logViewBtn2.setFont(new Font("맑은 고딕", Font.BOLD, 16));
+
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 0));
         btnPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 15, 0));
         btnPanel.add(logViewBtn);
         btnPanel.add(logViewBtn2);
-        btnPanel.add(collectBtn);
 
         // 로그 보기 기능 연결
         logViewBtn.addActionListener(e -> showSalesSummary());
@@ -232,7 +282,9 @@ public class AdminInfo extends JFrame implements ActionListener {
         content.add(welcomeLabel);
         content.add(Box.createVerticalStrut(10));
         content.add(tablePane);
-        content.add(incomeLabel);
+        content.add(incomeLabel);      // 수입 라벨 (수금 버튼 위)
+        content.add(collectPanel);     // 수금 입력 패널
+        content.add(Box.createVerticalStrut(10));
         content.add(btnPanel);
 
         adminFrame.setContentPane(content);
@@ -240,6 +292,23 @@ public class AdminInfo extends JFrame implements ActionListener {
         adminFrame.setVisible(true);
     }
 
+    // 수입 데이터 저장
+    private void saveIncomeData() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("income.txt"))) {
+            writer.write(String.valueOf(currentIncome));
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "수입 데이터 저장 실패: " + e.getMessage());
+        }
+    }
+
+    // 프로그램 시작 시 수입 데이터 로드
+    private void loadIncomeData() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("income.txt"))) {
+            currentIncome = Integer.parseInt(reader.readLine());
+        } catch (IOException | NumberFormatException e) {
+            currentIncome = 0;
+        }
+    }
     // 음료 종류별 개수 계산
     private Map<String, Integer> getBeverageCounts() {
         Map<String, Integer> counts = new HashMap<>();
@@ -250,7 +319,7 @@ public class AdminInfo extends JFrame implements ActionListener {
         }
 
         // 파일에서 데이터 읽기
-        try (BufferedReader reader = new BufferedReader(new FileReader("sales_log.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("drinkLog.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("\t");
@@ -368,7 +437,7 @@ public class AdminInfo extends JFrame implements ActionListener {
     // 매출 데이터 처리
     private void processSalesData(Map<String, Integer> dailySales,
                                   Map<String, Integer> monthlySales) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("sales_log.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("drinkLog.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("\t");
@@ -394,7 +463,7 @@ public class AdminInfo extends JFrame implements ActionListener {
     // 음료별 매출 데이터 처리
     private void processBeverageData(Map<String, Map<String, Integer>> dailyBeverageSales,
                                      Map<String, Map<String, Integer>> monthlyBeverageSales) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("sales_log.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("drinkLog.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("\t");
@@ -452,7 +521,7 @@ public class AdminInfo extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new AdminInfo().setVisible(true);
+            new AdminInfo(new OutputQueue(), new MoneyBox(), new JButton[1]).setVisible(true);
         });
     }
 }

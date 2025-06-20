@@ -8,13 +8,13 @@ class MoneyOut extends JFrame{
     public static int baseY = 500;
     private final int OFFSET = 50;
 
-    public MoneyOut(int moneyUnit) {
-        setSize(100, 50);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    JPanel container;
 
-        JPanel container = new JPanel();
+    public void alert(int moneyUnit) {
+
         Integer money = moneyUnit;
         JLabel currencies;
+
         if(money == -1){
             currencies = new JLabel("거스름돈 부족");
         }else{
@@ -22,6 +22,13 @@ class MoneyOut extends JFrame{
         }
         container.add(currencies);
         add(container);
+    }
+
+    public MoneyOut() {
+        setSize(250, 100);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        container = new JPanel();
 
         // 창 위치를 지정 (이전 창보다 OFFSET만큼 아래로)
         setLocation(baseX, baseY);
