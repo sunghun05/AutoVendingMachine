@@ -1,6 +1,6 @@
 package admin;
 
-import inventory.Inventory;
+import inventory.DrinksTray;
 import inventory.OutputQueue;
 import moneyBox.MoneyBox;
 
@@ -16,6 +16,74 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
+
+class reFillBtns implements ActionListener{
+    OutputQueue outputQueue;
+    Integer drinkId;
+    reFillBtns(Integer drinkId, OutputQueue outputQueue){
+        this.outputQueue = outputQueue;
+        this.drinkId = drinkId;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        DrinksTray tray = outputQueue.inventory.search(this.drinkId);
+        tray.reFill(1);
+    }
+}
+
+class reFillWindow extends JFrame {
+    public static int baseX = 300;
+    public static int baseY = 300;
+    private final int OFFSET = 50;
+
+    OutputQueue outputQueue;
+    JPanel container;
+
+    public reFillWindow(OutputQueue outputQueue) {
+        this.outputQueue = outputQueue;
+        setSize(1000, 200);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        container = new JPanel();
+        container.setLayout(new BorderLayout()); // 레이아웃 명확히 지정
+
+        String[] drinks = {"믹스커피", "고급 믹스커피", "물", "캔커피", "이온음료", "고급 캔커피", "탄산음료", "특화음료"};
+        Integer[] id = {1, 3, 5, 7, 9, 11, 13, 15};
+
+        JPanel inventoryPanel = new JPanel(new GridLayout(2, 4, 10, 10)); // 2행 4열로 보기 좋게
+
+        for (int i = 0; i < 8; i++) {
+            JButton selectBtn = new JButton(drinks[i]);
+            selectBtn.setBackground(Color.WHITE);
+            selectBtn.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+            selectBtn.setOpaque(true);
+            selectBtn.setBorderPainted(false);
+            selectBtn.addActionListener(new reFillBtns(id[i], outputQueue));
+            inventoryPanel.add(selectBtn);
+        }
+        container.add(inventoryPanel, BorderLayout.CENTER);
+
+        setContentPane(container); // JFrame의 contentPane으로 지정!
+
+        setLocation(baseX, baseY);
+        baseX += OFFSET;
+
+        setVisible(true);
+    }
+}
+
+
+/**
+ * class name: AdminInfo
+ * latest modify date: 2025.06.19
+ * run environment: MacOS 15.4.1(24E263)
+ *
+ * Feature: Generates Admin Window
+ *
+ * @author Sunghun Wang
+ * @version 1.0, implemented class
+ * @see
+ */
 
 public class AdminInfo extends JFrame implements ActionListener {
     private static final String CREDENTIALS_FILE = "admin_credentials.txt";
@@ -264,13 +332,24 @@ public class AdminInfo extends JFrame implements ActionListener {
         // 버튼 패널
         JButton logViewBtn = new JButton("일별/월별 매출");
         JButton logViewBtn2 = new JButton("음료별 일별/월별 매출");
+        JButton refillBtn = new JButton("재고 보충");
+
         logViewBtn.setFont(new Font("맑은 고딕", Font.BOLD, 16));
         logViewBtn2.setFont(new Font("맑은 고딕", Font.BOLD, 16));
+        refillBtn.setFont(new Font("맑은 고딕", Font.BOLD, 16));
+
+        refillBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new reFillWindow(outputQueue);
+            }
+        });
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 0));
         btnPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 15, 0));
         btnPanel.add(logViewBtn);
         btnPanel.add(logViewBtn2);
+        btnPanel.add(refillBtn);
 
         // 로그 보기 기능 연결
         logViewBtn.addActionListener(e -> showSalesSummary());

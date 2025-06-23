@@ -2,7 +2,6 @@ package inventory;
 
 import linkedList.LinkedList;
 import linkedList.Node;
-import moneyBox.MoneyTray;
 
 /**
  * class name: Drinks
@@ -16,6 +15,7 @@ import moneyBox.MoneyTray;
  * @see
  */
 
+//Node 클래스를 상속받아 Drinks 클래스 구성
 class Drinks extends Node<Drinks> {
     Drinks prev;
     Drinks(int index, int value){
@@ -36,6 +36,7 @@ class Drinks extends Node<Drinks> {
  * @see
  */
 // Queue
+//node of inventory which is binary tree
 public class DrinksTray implements LinkedList {
 
     Drinks head;
@@ -48,12 +49,14 @@ public class DrinksTray implements LinkedList {
     public int count;
     public Integer price;
 
-    DrinksTray(int trayNumber, int price){
+    DrinksTray(int trayNumber, int price){  //
         this.trayNumber = trayNumber;
         this.price = price;
         count = 0;
         init();
     }
+
+    //initialize
     @Override
     public void init(){
         //head.index: length, head.value: trayNumber
@@ -61,16 +64,18 @@ public class DrinksTray implements LinkedList {
         this.tail = head;
         reFill(10);
     }
+
+    //refill drinks with linked list data structure
     @Override
     public void reFill(int count){
         Drinks newDrinks;
         int endPoint = this.head.index + count;
         for(int i = this.head.index; i<endPoint; i++) {
-            newDrinks = new Drinks(i, this.trayNumber);
-            if (isEmpty()) {
+            newDrinks = new Drinks(i, this.trayNumber); // generate new node
+            if (isEmpty()) {                            // if tray is empty
                 newDrinks.prev = head;
                 head.next = newDrinks;
-            } else {
+            } else {                                    // 재고가 이미 있을 때
                 Drinks tmp = head;
                 while (tmp.next != null) {
                     tmp = tmp.next;
@@ -83,6 +88,8 @@ public class DrinksTray implements LinkedList {
             this.count++;
         }
     }
+
+    //get drinks
     @Override
     public void takeOut(int count){
         return ;
@@ -100,6 +107,7 @@ public class DrinksTray implements LinkedList {
         }
         return 0;
     }
+    //순차 탐색
     void search(){
         Drinks tmp = head;
         while(tmp.next != null){

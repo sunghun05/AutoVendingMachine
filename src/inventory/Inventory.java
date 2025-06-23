@@ -1,6 +1,5 @@
 package inventory;
 
-import inventory.*;
 import linkedList.BinaryTree;
 
 /**
@@ -15,10 +14,12 @@ import linkedList.BinaryTree;
  * @see
  */
 
+//implement interface which is generic
 public class Inventory implements BinaryTree<DrinksTray> {
 
     DrinksTray head;
 
+    //generate inventory tree
     public Inventory(){
         head = new DrinksTray(8, 0);
         reFill(new DrinksTray(1, 200));
@@ -30,6 +31,8 @@ public class Inventory implements BinaryTree<DrinksTray> {
         reFill(new DrinksTray(13, 750));
         reFill(new DrinksTray(15, 800));
     }
+
+    //add drinks Trays
     public void reFill(DrinksTray element){
         DrinksTray tmp = head;
         while(true){
@@ -54,6 +57,7 @@ public class Inventory implements BinaryTree<DrinksTray> {
             }
         }
     }
+
     public DrinksTray takeOut(int id, int count){
         DrinksTray tmp = new DrinksTray(1, 0);
         return tmp;
@@ -61,19 +65,21 @@ public class Inventory implements BinaryTree<DrinksTray> {
     public void insert(DrinksTray element){
 
     }
+
+    //binary search
     public DrinksTray search(int id){
         DrinksTray tmp = this.head;
 
-        while(tmp.trayNumber != id){
-            if(id < tmp.trayNumber && tmp.left != null){
+        while(tmp.trayNumber != id){ // id가 같은 노드 찾을 때 까지 탐색
+            if(id < tmp.trayNumber && tmp.left != null){    // 왼쪽이 비어있지 않고 현재 id가 목표보다 클 때
                 tmp = tmp.left;
-            }else if(id > tmp.trayNumber && tmp.right != null) {
+            }else if(id > tmp.trayNumber && tmp.right != null) {//오른쪽이 비어있지 않고 현재 id가 목표보다 작을 때
                 tmp = tmp.right;
             }else{
                 break;
             }
         }
-        return tmp;
+        return tmp; // 못찾으면 null
     }
     public void del(int id){
 

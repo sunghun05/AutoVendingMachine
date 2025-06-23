@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 
 public class OutputQueue implements LinkedList {
-    Inventory inventory = new Inventory();
+    public Inventory inventory = new Inventory();
 
     public product front;
     public product rear;
